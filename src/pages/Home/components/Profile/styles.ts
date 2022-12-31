@@ -30,11 +30,25 @@ export const ProfileHeader = styled.header`
 
   a {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
-    color: ${(props) => props.theme.color.blue};
-    font-weight: bold;
-    font-size: 0.75rem;
-    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    color: ${({ theme }) => theme.color.blue};
     text-decoration: none;
+
+    &:hover {
+      border-color: ${({ theme }) => theme.color.blue};
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
   }
 `

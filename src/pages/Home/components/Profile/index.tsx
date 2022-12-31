@@ -1,3 +1,5 @@
+import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { HeaderCard } from '../../../../components/HeaderCard'
 import { githubApi } from '../../../../lib/axios'
@@ -38,6 +40,7 @@ export function Profile() {
             <h2>{profile.name}</h2>
             <a href={profile.html_url}>
               <span>GitHub</span>
+              <FontAwesomeIcon icon={faUpRightFromSquare} />
             </a>
           </ProfileHeader>
           <p>{profile.bio}</p>
