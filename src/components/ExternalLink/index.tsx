@@ -3,13 +3,19 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { LinkContainer } from './styles'
 
-interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  hideIcon?: boolean
+}
 
-export function ExternalLink({ children, ...props }: ExternalLinkProps) {
+export function ExternalLink({
+  children,
+  hideIcon = false,
+  ...props
+}: ExternalLinkProps) {
   return (
     <LinkContainer {...props}>
       <span>{children}</span>
-      <FontAwesomeIcon icon={faUpRightFromSquare} />
+      {!hideIcon && <FontAwesomeIcon icon={faUpRightFromSquare} />}
     </LinkContainer>
   )
 }

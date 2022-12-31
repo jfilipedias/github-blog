@@ -34,7 +34,7 @@ export const Header = styled.header`
   justify-content: space-between;
 
   h2 {
-    color: ${(props) => props.theme.color['gray-100']};
+    color: ${(props) => props.theme.color['gray-50']};
     font-weight: bold;
     font-size: 1.5rem;
   }
