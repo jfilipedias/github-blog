@@ -1,9 +1,11 @@
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-import { HeaderCard } from '../../../../components/HeaderCard'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Card } from '../../../../components/Card'
+import { ExternalLink } from '../../../../components/ExternalLink'
 import { githubApi } from '../../../../lib/axios'
-import { InfoContainer, ProfileContainer, ProfileHeader } from './styles'
+import { InfoContainer, ProfileContainer, Header, Info } from './styles'
 
 interface UserProfile {
   login: string
@@ -31,22 +33,38 @@ export function Profile() {
   }, [])
 
   return (
-    <HeaderCard>
+    <Card>
       <ProfileContainer>
         <img src={profile.avatar_url} alt="" />
 
         <InfoContainer>
-          <ProfileHeader>
+          <Header>
             <h2>{profile.name}</h2>
-            <a href={profile.html_url}>
-              <span>GitHub</span>
-              <FontAwesomeIcon icon={faUpRightFromSquare} />
-            </a>
-          </ProfileHeader>
+            <ExternalLink href={profile.html_url}>GitHub</ExternalLink>
+          </Header>
+
           <p>{profile.bio}</p>
-          <div></div>
+
+          <div>
+            <Info>
+              <FontAwesomeIcon icon={faGithub} />
+              <span>{profile.login}</span>
+            </Info>
+
+            {!!profile.company && (
+              <Info>
+                <FontAwesomeIcon icon={faBuilding} />
+                <span>{profile.company}</span>
+              </Info>
+            )}
+
+            <Info>
+              <FontAwesomeIcon icon={faUserGroup} />
+              <span>{profile.followers} seguidores</span>
+            </Info>
+          </div>
         </InfoContainer>
       </ProfileContainer>
-    </HeaderCard>
+    </Card>
   )
 }

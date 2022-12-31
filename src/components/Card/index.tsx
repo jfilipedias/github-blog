@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 import { CardContainer } from './styles'
 
-interface HeaderCardProps {
+interface CardProps {
   children: ReactNode
 }
 
-export function HeaderCard({ children }: HeaderCardProps) {
+export function Card({ children }: CardProps) {
   return <CardContainer>{children}</CardContainer>
 }

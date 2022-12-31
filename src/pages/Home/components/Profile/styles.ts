@@ -15,9 +15,20 @@ export const ProfileContainer = styled.div`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  p {
+    margin-top: 0.5rem;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
 `
 
-export const ProfileHeader = styled.header`
+export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,28 +38,14 @@ export const ProfileHeader = styled.header`
     font-weight: bold;
     font-size: 1.5rem;
   }
+`
 
-  a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 1px solid transparent;
-    color: ${({ theme }) => theme.color.blue};
-    text-decoration: none;
+export const Info = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-    &:hover {
-      border-color: ${({ theme }) => theme.color.blue};
-    }
-
-    span {
-      font-weight: bold;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    svg {
-      width: 0.75rem;
-      height: 0.75rem;
-    }
+  svg {
+    color: ${({ theme }) => theme.color['gray-400']};
   }
 `
