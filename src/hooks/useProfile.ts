@@ -1,4 +1,4 @@
-import { useGithubApi } from './useGithubApi'
+import { useApi } from './useApi'
 
 interface Profile {
   login: string
@@ -11,7 +11,7 @@ interface Profile {
 }
 
 export function useProfile(): Profile | undefined {
-  const { response } = useGithubApi<Profile>(
+  const { response } = useApi<Profile>(
     `/users/${import.meta.env.VITE_GITHUB_USERNAME}`,
   )
 

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import { githubApi } from '../lib/axios'
+import { api } from '../lib/axios'
 
-export function useGithubApi<T>(endpoint: string) {
+export function useApi<T>(endpoint: string) {
   const [response, setResponse] = useState<T>()
   const [error, setError] = useState<any>()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await githubApi.get(endpoint)
+        const res = await api.get(endpoint)
         setResponse(res.data)
       } catch (err) {
         setError(err)

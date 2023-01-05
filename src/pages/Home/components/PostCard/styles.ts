@@ -20,6 +20,7 @@ export const PostCardContainer = styled.div`
     justify-content: space-between;
 
     h2 {
+      max-width: 17rem;
       font-size: 1.25rem;
       font-weight: bold;
       color: ${({ theme }) => theme.color['gray-50']};
