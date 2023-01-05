@@ -10,7 +10,7 @@ export function Home() {
   return (
     <HomeContainer>
       <Profile />
-      <Search />
+      <Search postAmount={posts?.length} />
       <PostsList>
         {posts?.map((post) => (
           <PostCard

@@ -1,11 +1,18 @@
 import { SearchContainer } from './styles'
 
-export function Search() {
+interface SearchProps {
+  postAmount: number
+}
+
+export function Search({ postAmount }: SearchProps) {
   return (
     <SearchContainer>
       <div>
         <h2>Publicações</h2>
-        <span>x publicações</span>
+
+        <span>
+          {postAmount} {postAmount > 1 ? 'publicações' : 'publicação'}
+        </span>
       </div>
 
       <label>

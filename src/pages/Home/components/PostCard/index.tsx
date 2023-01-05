@@ -1,8 +1,9 @@
+import ReactMarkdown from 'react-markdown'
 import {
   formatDateDistanceToNow,
   formatDateToString,
 } from '../../../../utils/formatter'
-import { PostCardContainer } from './styles'
+import { AbstractContainer, PostCardContainer, PostCardHeader } from './styles'
 
 interface PostCardProps {
   title: string
@@ -13,14 +14,16 @@ interface PostCardProps {
 export function PostCard({ title, abstract, createdAt }: PostCardProps) {
   return (
     <PostCardContainer>
-      <div>
+      <PostCardHeader>
         <h2>{title}</h2>
         <time dateTime={formatDateToString(new Date(createdAt))}>
           {formatDateDistanceToNow(new Date(createdAt))}
         </time>
-      </div>
+      </PostCardHeader>
 
-      <p>{abstract}</p>
+      <AbstractContainer>
+        <ReactMarkdown disallowedElements={['img']}>{abstract}</ReactMarkdown>
+      </AbstractContainer>
     </PostCardContainer>
   )
 }
