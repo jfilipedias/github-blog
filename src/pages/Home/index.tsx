@@ -5,12 +5,12 @@ import { Search } from './components/Search'
 import { HomeContainer, PostsList } from './styles'
 
 export function Home() {
-  const posts = usePosts()
+  const { posts, postsCount, handleQueryChange } = usePosts()
 
   return (
     <HomeContainer>
       <Profile />
-      <Search postAmount={posts?.length} />
+      <Search postsCount={postsCount} onSearchChange={handleQueryChange} />
       <PostsList>
         {posts?.map((post) => (
           <PostCard

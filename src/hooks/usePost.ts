@@ -13,12 +13,12 @@ interface Post {
   body: string
 }
 
-export function usePost(id: number): Post | undefined {
+export function usePost(id: number): Post {
   const { response } = useApi<Post>(
     `/repos/${import.meta.env.VITE_GITHUB_USERNAME}/${
       import.meta.env.VITE_GITHUB_REPO
     }/issues/${id}`,
   )
 
-  return response
+  return response as Post
 }

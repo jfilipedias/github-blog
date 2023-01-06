@@ -10,10 +10,10 @@ interface Profile {
   bio: string
 }
 
-export function useProfile(): Profile | undefined {
+export function useProfile(): Profile {
   const { response } = useApi<Profile>(
     `/users/${import.meta.env.VITE_GITHUB_USERNAME}`,
   )
 
-  return response
+  return response as Profile
 }
