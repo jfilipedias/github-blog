@@ -15,6 +15,7 @@ export function Home() {
         {posts?.map((post) => (
           <PostCard
             key={post.id}
+            to={`/post/${post.number}`}
             title={post.title}
             abstract={post.body}
             createdAt={post.created_at}

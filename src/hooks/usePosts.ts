@@ -3,6 +3,7 @@ import { useApi } from './useApi'
 
 interface Post {
   id: number
+  number: number
   title: string
   created_at: string
   body: string

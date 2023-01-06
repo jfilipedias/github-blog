@@ -6,14 +6,15 @@ import {
 import { AbstractContainer, PostCardContainer, PostCardHeader } from './styles'
 
 interface PostCardProps {
+  to: string
   title: string
   abstract: string
   createdAt: string
 }
 
-export function PostCard({ title, abstract, createdAt }: PostCardProps) {
+export function PostCard({ to, title, abstract, createdAt }: PostCardProps) {
   return (
-    <PostCardContainer>
+    <PostCardContainer to={to}>
       <PostCardHeader>
         <h2>{title}</h2>
         <time dateTime={formatDateToString(new Date(createdAt))}>
