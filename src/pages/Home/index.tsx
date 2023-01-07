@@ -1,7 +1,7 @@
-import { usePosts } from '../../hooks/usePosts'
 import { PostCard } from './components/PostCard'
 import { Profile } from './components/Profile'
 import { Search } from './components/Search'
+import { usePosts } from '../../hooks/usePosts'
 import { HomeContainer, PostsList } from './styles'
 
 export function Home() {

@@ -13,3 +13,8 @@ export const PostContent = styled.div`
   grid-gap: 2rem;
   padding: 3rem 0;
 `
+export const PostHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+`

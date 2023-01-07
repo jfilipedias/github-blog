@@ -1,7 +1,7 @@
 import { useApi } from './useApi'
 
 interface Post {
-  url: string
+  html_url: string
   id: number
   number: number
   title: string
@@ -13,7 +13,7 @@ interface Post {
   body: string
 }
 
-export function usePost(id: number): Post {
+export function usePost(id: string): Post {
   const { response } = useApi<Post>(
     `/repos/${import.meta.env.VITE_GITHUB_USERNAME}/${
       import.meta.env.VITE_GITHUB_REPO
