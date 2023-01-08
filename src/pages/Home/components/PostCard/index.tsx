@@ -23,7 +23,9 @@ export function PostCard({ to, title, abstract, createdAt }: PostCardProps) {
       </PostCardHeader>
 
       <AbstractContainer>
-        <ReactMarkdown disallowedElements={['img']}>{abstract}</ReactMarkdown>
+        <ReactMarkdown disallowedElements={['a', 'img']} unwrapDisallowed>
+          {abstract}
+        </ReactMarkdown>
       </AbstractContainer>
     </PostCardContainer>
   )
