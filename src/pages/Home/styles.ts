@@ -10,6 +10,6 @@ export const HomeContainer = styled.div`
 export const PostsList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
   padding: 3rem 0;
 `

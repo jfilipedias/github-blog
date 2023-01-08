@@ -23,20 +23,25 @@ export const PostCardHeader = styled.header`
   justify-content: space-between;
 
   h2 {
-    max-width: 17rem;
+    display: inline-block;
+    margin-right: 1rem;
     font-size: 1.25rem;
     font-weight: bold;
     color: ${({ theme }) => theme.color['gray-50']};
   }
 
   time {
+    flex-shrink: 0;
     font-size: 0.875rem;
     color: ${({ theme }) => theme.color['gray-300']};
   }
 `
 
 export const AbstractContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 7rem;
+  max-width: 22rem;
   color: ${({ theme }) => theme.color['gray-200']};
   overflow: hidden;
 
