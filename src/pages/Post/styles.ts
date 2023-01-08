@@ -7,14 +7,31 @@ export const PostContainer = styled.div`
   max-width: 54rem;
 `
 
-export const PostContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  padding: 3rem 0;
-`
 export const PostHeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+`
+
+export const PostContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.5rem 2rem;
+
+  p {
+    display: inline;
+  }
+
+  a {
+    color: ${({ theme }) => theme.color.blue};
+  }
+
+  code {
+    font-family: 'Fira Code', monospace !important;
+  }
+
+  img {
+    max-width: 100%;
+  }
 `

@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCalendarDay,
+  faChevronLeft,
+  faComment,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Card } from '../../../../components/Card'
 import { ExternalLink } from '../../../../components/ExternalLink'
@@ -10,6 +14,10 @@ import {
   LinksContainer,
   PostHeaderContainer,
 } from './styles'
+import {
+  formatDateDistanceToNow,
+  formatDateToString,
+} from '../../../../utils/formatter'
 
 interface PostHeaderProps {
   title: string
@@ -48,12 +56,16 @@ export function PostHeader({
             </Info>
 
             <Info>
-              <FontAwesomeIcon icon={faGithub} />
-              <span>{createdAt}</span>
+              <FontAwesomeIcon icon={faCalendarDay} />
+              {createdAt && (
+                <time dateTime={formatDateToString(new Date(createdAt))}>
+                  {formatDateDistanceToNow(new Date(createdAt))}
+                </time>
+              )}
             </Info>
 
             <Info>
-              <FontAwesomeIcon icon={faGithub} />
+              <FontAwesomeIcon icon={faComment} />
               <span>
                 {commentCount}
                 {commentCount === 1 ? ' comentário' : ' comentários'}
