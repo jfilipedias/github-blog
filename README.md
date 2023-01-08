@@ -19,6 +19,7 @@ Além disso é possível filtrar os posts por meio de uma busca de palavras-chav
 Foram adicionadas algumas funcionalidades além do proposto durante o ignite:
 
 - [ ] Responsividade
+- [ ] Página 404
 
 ## Getting Started
 
