@@ -31,5 +31,5 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
         env:
-          VITE_GITHUB_USERNAME: jfilipedias
-          VITE_GITHUB_REPO: github-blog
+          VITE_GITHUB_USERNAME: ${{ secrets.VITE_GITHUB_USERNAME }}
+          VITE_GITHUB_REPO: ${{ secrets.VITE_GITHUB_REPO }}
